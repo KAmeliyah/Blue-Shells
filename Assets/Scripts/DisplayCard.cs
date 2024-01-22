@@ -18,6 +18,7 @@ public class DisplayCard : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
