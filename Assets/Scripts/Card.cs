@@ -1,34 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 [System.Serializable]
 
-public class Card
+public class Card: MonoBehaviour
 {
-
     public int id;
-    public string cardName;
     public string element;
     public int power;
-   
 
+    public bool hasBeenPlayed;
+    public int handIndex;
+    private CombatManager cm;
 
-
-
-    public Card()
+  
+    private void Start()
     {
+        cm = FindObjectOfType<CombatManager>();
 
     }
 
-
-    public Card(int _id, string _cardName, string _element, int _power)
+    private void OnMouseDown()
     {
-        id = _id;
-        cardName = _cardName;
-        element = _element;
-        power = _power;
-        
-        
+        if(hasBeenPlayed == false)
+        {
+            transform.position = Vector3.up * 5;
+            hasBeenPlayed = true;
+            cm.availableCardSlots[handIndex] = true;
+            Invoke("Move to Discard Pile", 2f);
+        }
     }
 
+    void MovetoDiscardPile()
+    {
+        cm.discardPile.Add(this);
+        gameObject.SetActive(false);
+    }
 }
