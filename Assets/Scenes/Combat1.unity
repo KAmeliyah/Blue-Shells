@@ -1767,7 +1767,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1775,7 +1775,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &647760560
@@ -2337,7 +2337,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2345,7 +2345,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &840046533
@@ -4491,6 +4491,11 @@ MonoBehaviour:
   - {fileID: 611659684}
   - {fileID: 1699207549}
   availableCardSlots: 01010101
+  state: 0
+  playerPrefab: {fileID: 82588607637522228, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
+  enemyPrefab: {fileID: 1652869406700424204, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
+  playerBattleStation: {fileID: 1425874329751477511}
+  enemyBattleStation: {fileID: 7100710168190927745}
   deckSizeText: {fileID: 1378434490}
 --- !u!4 &1425231598
 Transform:
@@ -5320,7 +5325,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5328,7 +5333,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1699207548
@@ -5404,7 +5409,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5412,7 +5417,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1709834542
@@ -8366,7 +8371,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 82588607637522228, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: PlayerBattleStation
       objectReference: {fileID: 0}
     - target: {fileID: 1139379669659651825, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
       propertyPath: m_RootOrder
@@ -8378,7 +8383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1139379669659651825, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -2.91
       objectReference: {fileID: 0}
     - target: {fileID: 1139379669659651825, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8412,11 +8417,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4848416944523999841, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848416944523999841, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
+--- !u!4 &1425874329751477511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1139379669659651825, guid: c0e7bb9a41e7c584aa79f19ca6dbca8b, type: 3}
+  m_PrefabInstance: {fileID: 1425874329751477510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7100710168190927744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8427,7 +8445,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1652869406700424204, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyBattleStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904603677503727081, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1904603677503727081, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8741229254808942940, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
       propertyPath: m_RootOrder
@@ -8439,7 +8465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8741229254808942940, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 8741229254808942940, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8478,3 +8504,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
+--- !u!4 &7100710168190927745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8741229254808942940, guid: 146adaf282317d04b942f9d125a95f93, type: 3}
+  m_PrefabInstance: {fileID: 7100710168190927744}
+  m_PrefabAsset: {fileID: 0}
