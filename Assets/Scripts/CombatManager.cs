@@ -21,19 +21,46 @@ public class CombatManager : MonoBehaviour
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
 
+    Unit playerUnit;
+    Unit enemyUnit;
+
+
     public TextMeshProUGUI deckSizeText;
 
     private void Start()
     {
         state = BattleState.START;
-        SetUpBattle();
+        StartCoroutine(SetUpBattle());
     }
 
-    private void SetUpBattle()
+    private IEnumerator SetUpBattle()
     {
-        Instantiate(playerPrefab,playerBattleStation);
-        Instantiate(enemyPrefab,enemyBattleStation);
+        GameObject playerGO = Instantiate(playerPrefab,playerBattleStation);
+        playerGO.GetComponent<Unit>();
+
+
+        GameObject enemyGo = Instantiate(enemyPrefab,enemyBattleStation);
+        enemyUnit = enemyGo.GetComponent<Unit>();
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState.PLAYERTURN;
+        PlayerTurn();
+
+
     }
+
+   
+    //logic during the players turn
+    public void PlayerTurn()
+    {
+
+
+        return;
+
+    }
+
+
 
     public void DrawCard()
     {
@@ -59,11 +86,9 @@ public class CombatManager : MonoBehaviour
        
     }
 
-    private int CalculateDamage(Card _card)
+    public void EnemyTurn()
     {
 
-
-        return 0;
     }
    
 

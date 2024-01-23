@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6197098257440920236}
   - component: {fileID: 1799610975137622782}
   - component: {fileID: 6660245954382145810}
-  - component: {fileID: 809785789738736481}
+  - component: {fileID: 1117942052542385180}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652869406700424204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9, y: -2.86, z: 0}
   m_LocalScale: {x: 1.4106, y: 1.3293477, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1904603677503727081
 SpriteRenderer:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b846b6eff48b142a1ef24376b6f14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &809785789738736481
+--- !u!114 &1117942052542385180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,7 +197,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652869406700424204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1262a51f63ce1054b98161e162b60cf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 40d99b1655686324880987fd04cc5ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 20
+  maxHP: 20
+  currentHP: 20
+  damage: 0
+  attackElement: 
+  attackPower: 0
