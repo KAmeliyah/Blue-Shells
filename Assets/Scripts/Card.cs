@@ -28,7 +28,7 @@ public class Card: MonoBehaviour
             transform.position = Vector3.up * 5;
             hasBeenPlayed = true;
             cm.availableCardSlots[handIndex] = true;
-            Invoke("Move to Discard Pile", 2f);
+            Invoke("MovetoDiscardPile", 2f);
         }
     }
 

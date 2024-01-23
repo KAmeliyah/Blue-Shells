@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class CombatManager : MonoBehaviour
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
 
-    public Text deckSizeText;
+    public TextMeshProUGUI deckSizeText;
 
     public void DrawCard()
     {
@@ -22,8 +23,9 @@ public class CombatManager : MonoBehaviour
             {
                 if (availableCardSlots[i] == true)
                 {
-                    
+
                     randCard.gameObject.SetActive(true);
+                    randCard.handIndex = i;
                     randCard.transform.position = cardSlots[i].position;
                   
                     availableCardSlots[i] = false;
@@ -40,4 +42,5 @@ public class CombatManager : MonoBehaviour
     {
         deckSizeText.text = deck.Count.ToString();
     }
+
 }
