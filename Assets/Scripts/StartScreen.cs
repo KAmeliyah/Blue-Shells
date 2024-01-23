@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
+
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(1);
@@ -15,4 +17,6 @@ public class StartScreen : MonoBehaviour
     {
         Application.Quit();
     }
+
 }
+

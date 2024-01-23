@@ -41,6 +41,8 @@ public class Door : MonoBehaviour
         }
     }
 
+
+
     private void Update()
     {
         if (enterAllowed) 
