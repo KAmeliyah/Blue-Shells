@@ -47,14 +47,14 @@ public class CombatManager : MonoBehaviour
     {
         GameObject playerGO = Instantiate(playerPrefab);
         playerGO.transform.position = playerBattleStation.transform.position;   
-        playerGO.GetComponent<Unit>();
+        playerUnit = playerGO.GetComponent<Unit>();
 
 
         GameObject enemyGo = Instantiate(enemyPrefab);
         enemyGo.transform.position = enemyBattleStation.transform.position;
         enemyUnit = enemyGo.GetComponent<Unit>();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
@@ -64,9 +64,26 @@ public class CombatManager : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
-        state = BattleState.PLAYERTURN;
         yield return new WaitForSeconds(0.5f);
 
+        state = BattleState.PLAYERTURN;
+        StartCoroutine(WaitWhilePlayerTurn());
+    }
+
+    IEnumerator WaitWhilePlayerTurn()
+    {
+        playedCard = null;
+        Debug.Log("Player turn start");
+
+       while(playedCard == null)
+        {
+            yield return null;
+        }
+
+        Debug.Log("Player turn end");
+
+        Resolve();
+        
     }
 
     public void Resolve()
@@ -105,23 +122,27 @@ public class CombatManager : MonoBehaviour
             Debug.Log("Player Lost with" + enemyPlay.element);
         }
 
-        
+        //issue starts here
 
         if (playerwin) 
         {
-            eDead = enemyUnit.TakeDamage(Mathf.Abs(playedCard.power - enemyPlay.power));
+            Debug.Log("Start calc");
+            int damage = Mathf.Abs(playedCard.power - enemyPlay.power);
+            eDead = enemyUnit.TakeDamage(damage);
             Debug.Log(enemyUnit.currentHP);
 
         }
         else
         {
-            pDead = playerUnit.TakeDamage(Mathf.Abs(enemyPlay.power - playedCard.power));
+            Debug.Log("Start calc");
+            int damage = Mathf.Abs(enemyPlay.power - playedCard.power);
+            pDead = playerUnit.TakeDamage(damage);
             Debug.Log(playerUnit.currentHP);
         }
 
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if(eDead)
         {
@@ -134,6 +155,7 @@ public class CombatManager : MonoBehaviour
             Debug.Log("player lost");
            
             state = BattleState.LOST;
+            EndBattle();
         }
         else
         {

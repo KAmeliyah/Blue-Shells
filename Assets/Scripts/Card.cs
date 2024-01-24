@@ -12,6 +12,8 @@ public class Card: MonoBehaviour
     public int power;
 
     public bool hasBeenPlayed;
+
+ 
   
     public int handIndex;
     private CombatManager cm;
@@ -25,6 +27,8 @@ public class Card: MonoBehaviour
 
     private void OnMouseDown()
     {
+        
+
         if(hasBeenPlayed == false && cm.state == BattleState.PLAYERTURN )
         {
             transform.position = cm.playerCardLoc.position;
@@ -32,7 +36,6 @@ public class Card: MonoBehaviour
             cm.availableCardSlots[handIndex] = true;
             cm.enemyPlay.transform.position = cm.enemyCardLoc.position;
             GetPlayedCard();
-            cm.Resolve();
             Invoke("MovetoDiscardPile", 5f);
            
         }
