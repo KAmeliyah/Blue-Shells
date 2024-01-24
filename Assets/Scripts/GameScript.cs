@@ -1,5 +1,5 @@
 using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 public class GameScript : MonoBehaviour
 {
     [SerializeField] private Transform emptySpace = null;
@@ -49,6 +49,7 @@ public class GameScript : MonoBehaviour
             }
             if (correctTiles == tiles.Length - 1)
             {
+      
                 _isFinished = true;
                 endPanel.SetActive(true);
             }
@@ -56,10 +57,10 @@ public class GameScript : MonoBehaviour
     }
 
  // choose the scene to continue
-   // public void Continue()
-    //{
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-   // }
+   public void Continue()
+   {
+        SceneManager.LoadSceneAsync("Combat1");
+   }
 
     public void Shuffle()
     {

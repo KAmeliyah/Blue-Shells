@@ -13,9 +13,6 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN,RESOLVE, WON, LOST}
 public class CombatManager : MonoBehaviour
 {
 
-    [SerializeField] private AudioClip fireSoundClip;
-
-
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     public Card playedCard = null;
@@ -139,7 +136,7 @@ public class CombatManager : MonoBehaviour
         {
             playerwin = true;
             ewin = false;
-           Debug.Log("Player Win with Grass");
+         
            
         }
         else if (playedCard.element == enemyPlay.element)
@@ -157,23 +154,20 @@ public class CombatManager : MonoBehaviour
         //calculate damage
         if (playerwin && !ewin) 
         {
-            Debug.Log("Start calc");
+            
             int damage = Mathf.Abs(playedCard.power - enemyPlay.power);
             eDead = enemyUnit.TakeDamage(damage,playedCard.element);
-            Debug.Log(enemyUnit.currentHP);
+       
 
         }
         else if (!playerwin && ewin)
         {
-            Debug.Log("Start calc");
+            
             int damage = Mathf.Abs(enemyPlay.power - playedCard.power);
             pDead = playerUnit.TakeDamage(damage,enemyPlay.element);
-            Debug.Log(playerUnit.currentHP);
+         
         }
-        else
-        {
-            Debug.Log("Draw");
-        }
+       
 
       
 
@@ -184,19 +178,18 @@ public class CombatManager : MonoBehaviour
         if(eDead)
         {
             state = BattleState.WON;
-            Debug.Log("player wins");
             EndBattle();
         }
         else if(pDead)
         {
-            Debug.Log("player lost");
+          
            
             state = BattleState.LOST;
             EndBattle();
         }
         else
         {
-            Debug.Log("loop");
+           
             
             state = BattleState.ENEMYTURN;
             enemyPlay.MovetoDiscardPile();
@@ -208,21 +201,11 @@ public class CombatManager : MonoBehaviour
 
 
 
-    private void SoundFx(string element)
-    {
-
-
-
-
-
-
-    }
-
     void EndBattle()
     {
         if (state == BattleState.WON)
         {
-            Debug.Log("Win");
+            SceneManager.LoadSceneAsync("Overworld1");
         }
         else if(state == BattleState.LOST)
         {
@@ -259,7 +242,6 @@ public class CombatManager : MonoBehaviour
     private void Update()
     {
         deckSizeText.text = deck.Count.ToString();
-       
        
     }
 

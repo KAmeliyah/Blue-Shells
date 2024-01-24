@@ -16,8 +16,6 @@ public class Unit : MonoBehaviour
     public int damage;
     public int attackPower;
 
-  
-
 
 
     public void SetDamage(int _dmg)

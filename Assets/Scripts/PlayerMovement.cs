@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private LayerMask jumpableGround;
 
+    [SerializeField] private AudioClip runningSoundClip;
+
+
 
 
     // Start is called before the first frame update
@@ -17,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+
+        
 
     }
 
@@ -31,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(rb.velocity.x, 7);
         }
+
+        if (Input.GetButtonDown("Horizontal"))
+        {
+        }
+
     }
 
     private bool IsGrounded()
