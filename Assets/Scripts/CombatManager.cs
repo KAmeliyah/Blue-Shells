@@ -157,7 +157,6 @@ public class CombatManager : MonoBehaviour
       
 
 
-
         yield return new WaitForSeconds(1f);
 
         if(eDead)
@@ -188,7 +187,7 @@ public class CombatManager : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            //win
+            Debug.Log("Win");
         }
         else if(state == BattleState.LOST)
         {
@@ -233,9 +232,11 @@ public class CombatManager : MonoBehaviour
 
 
 /*
+ * 
  * states:
  * start
  * player turn
  * enemy turn
  * won/lost
+ *
  * */
