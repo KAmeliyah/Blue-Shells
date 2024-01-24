@@ -98,33 +98,44 @@ public class CombatManager : MonoBehaviour
     IEnumerator ResolveRound()
     {
         bool playerwin = false;
+        bool ewin = false;
         bool pDead = false;
         bool eDead = false;
 
         if(playedCard.element == "Fire" && enemyPlay.element == "Grass")
         {
             playerwin = true;
+            ewin = false;
             Debug.Log("Player Win with Fire");
         }
         else if (playedCard.element == "Water" && enemyPlay.element == "Fire")
         {
             playerwin = true;
+            ewin = false;
             Debug.Log("Player Win with Water");
         }
         else if (playedCard.element == "Grass" && enemyPlay.element == "Water")
         {
             playerwin = true;
+            ewin = false;
             Debug.Log("Player Win with Grass");
+           
+        }
+        else if (playedCard.element == enemyPlay.element)
+        {
+            playerwin = false;
+            ewin = false;
         }
         else
         {
+            ewin = true;
             playerwin= false;
             Debug.Log("Player Lost with" + enemyPlay.element);
         }
 
         //issue starts here
 
-        if (playerwin) 
+        if (playerwin && !ewin) 
         {
             Debug.Log("Start calc");
             int damage = Mathf.Abs(playedCard.power - enemyPlay.power);
@@ -132,13 +143,18 @@ public class CombatManager : MonoBehaviour
             Debug.Log(enemyUnit.currentHP);
 
         }
-        else
+        else if (!playerwin && ewin)
         {
             Debug.Log("Start calc");
             int damage = Mathf.Abs(enemyPlay.power - playedCard.power);
             pDead = playerUnit.TakeDamage(damage);
             Debug.Log(playerUnit.currentHP);
         }
+        else
+        {
+            Debug.Log("Draw");
+        }
+      
 
 
 
