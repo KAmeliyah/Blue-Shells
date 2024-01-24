@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();

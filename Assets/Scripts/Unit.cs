@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Unit : MonoBehaviour
 {
+
+    [SerializeField] private AudioClip deathSoundClip;
+    [SerializeField] private AudioClip swordSoundClip;
+
+
     public string maxHP;
     public int currentHP;
 
     public int damage;
-    public string attackElement;
     public int attackPower;
+
+  
+
 
 
     public void SetDamage(int _dmg)
@@ -19,12 +27,20 @@ public class Unit : MonoBehaviour
 
   
 
-    public bool TakeDamage(int _dmg)
+    public bool TakeDamage(int _dmg, string element)
     {
         currentHP -= _dmg;
 
+       
+            SoundFXManager.instance.PlaySoundFXClip(swordSoundClip, transform, 1f);
+        
+
+        
+
         if(currentHP <= 0)
         {
+            SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform, 1f);
+       
             return true;
 
         }
@@ -33,4 +49,6 @@ public class Unit : MonoBehaviour
             return false;
         }
     }
+
+   
 }

@@ -10,7 +10,7 @@ public class SceneChanger : MonoBehaviour
     private bool enterAllowed;
     private string sceneToLoad;
 
-    private void Start()
+    private void Awake()
     {
         fade = FindObjectOfType<FadeInOut>();
     }

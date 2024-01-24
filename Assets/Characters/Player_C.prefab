@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861463696850501904, guid: 2d472dfe28628bf45b5ca8eabad71818, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3861463696850501904, guid: 2d472dfe28628bf45b5ca8eabad71818, type: 3}
       propertyPath: m_LocalScale.x
@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d99b1655686324880987fd04cc5ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSoundClip: {fileID: 8300000, guid: 1b2a336fb36a49547a873498025f76f1, type: 3}
+  swordSoundClip: {fileID: 8300000, guid: fc5f9a0b6cfd0f74d986af581d856691, type: 3}
   maxHP: 60
   currentHP: 60
   damage: 0
-  attackElement: 
   attackPower: 0

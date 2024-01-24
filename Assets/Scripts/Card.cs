@@ -13,13 +13,13 @@ public class Card: MonoBehaviour
 
     public bool hasBeenPlayed;
 
- 
+    public bool player;
   
     public int handIndex;
     private CombatManager cm;
 
   
-    private void Start()
+    private void Awake()
     {
         cm = FindObjectOfType<CombatManager>();
 
@@ -51,12 +51,18 @@ public class Card: MonoBehaviour
 
 
 
-    void MovetoDiscardPile()
+    public void MovetoDiscardPile()
     {
-        
-        cm.discardPile.Add(this);
+        if(player)
+        {
+            cm.discardPile.Add(this);
+        }
+        else
+        {
+            cm.eDiscardPile.Add(this);
+        }
+       
         gameObject.SetActive(false);
-
 
     }
 }

@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -11,12 +12,17 @@ using UnityEngine.UI;
 public enum BattleState { START, PLAYERTURN, ENEMYTURN,RESOLVE, WON, LOST}
 public class CombatManager : MonoBehaviour
 {
+
+    [SerializeField] private AudioClip fireSoundClip;
+
+
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     public Card playedCard = null;
 
     public List <Card> enemyDeck = new List<Card>();
-    public Card enemyPlay = null;   
+    public List<Card> eDiscardPile = new List<Card>();
+    public Card enemyPlay = null;
 
 
     public Transform[] cardSlots;
@@ -72,7 +78,7 @@ public class CombatManager : MonoBehaviour
     }
     IEnumerator EnemyTurn()
     {
-        Card enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
+        enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
         enemyDeck.Remove(enemyPlay);
 
         yield return new WaitForSeconds(0.5f);
@@ -91,7 +97,9 @@ public class CombatManager : MonoBehaviour
             yield return null;
         }
 
-     
+        DrawCard();
+
+        Debug.Log("Player Turn Ended");
 
         Resolve();
         
@@ -113,23 +121,25 @@ public class CombatManager : MonoBehaviour
         bool pDead = false;
         bool eDead = false;
 
+        //resolve winner
+
         if(playedCard.element == "Fire" && enemyPlay.element == "Grass")
         {
             playerwin = true;
             ewin = false;
-            Debug.Log("Player Win with Fire");
+            
         }
         else if (playedCard.element == "Water" && enemyPlay.element == "Fire")
         {
             playerwin = true;
             ewin = false;
-            Debug.Log("Player Win with Water");
+            
         }
         else if (playedCard.element == "Grass" && enemyPlay.element == "Water")
         {
             playerwin = true;
             ewin = false;
-            Debug.Log("Player Win with Grass");
+           Debug.Log("Player Win with Grass");
            
         }
         else if (playedCard.element == enemyPlay.element)
@@ -141,15 +151,15 @@ public class CombatManager : MonoBehaviour
         {
             ewin = true;
             playerwin= false;
-            Debug.Log("Player Lost with" + enemyPlay.element);
+           
         }
 
-
+        //calculate damage
         if (playerwin && !ewin) 
         {
             Debug.Log("Start calc");
             int damage = Mathf.Abs(playedCard.power - enemyPlay.power);
-            eDead = enemyUnit.TakeDamage(damage);
+            eDead = enemyUnit.TakeDamage(damage,playedCard.element);
             Debug.Log(enemyUnit.currentHP);
 
         }
@@ -157,18 +167,20 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log("Start calc");
             int damage = Mathf.Abs(enemyPlay.power - playedCard.power);
-            pDead = playerUnit.TakeDamage(damage);
+            pDead = playerUnit.TakeDamage(damage,enemyPlay.element);
             Debug.Log(playerUnit.currentHP);
         }
         else
         {
             Debug.Log("Draw");
         }
+
       
 
+        yield return new WaitForSeconds(5f);
 
-        yield return new WaitForSeconds(1f);
 
+        //check win
         if(eDead)
         {
             state = BattleState.WON;
@@ -185,10 +197,23 @@ public class CombatManager : MonoBehaviour
         else
         {
             Debug.Log("loop");
-         
+            
             state = BattleState.ENEMYTURN;
+            enemyPlay.MovetoDiscardPile();
             StartCoroutine(EnemyTurn());
         }
+
+    }
+
+
+
+
+    private void SoundFx(string element)
+    {
+
+
+
+
 
 
     }
@@ -201,7 +226,7 @@ public class CombatManager : MonoBehaviour
         }
         else if(state == BattleState.LOST)
         {
-            //lose- load game over screen
+            SceneManager.LoadSceneAsync("GameOver");
         }
 
     }

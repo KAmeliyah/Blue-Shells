@@ -179,6 +179,7 @@ MonoBehaviour:
   element: Fire
   power: 9
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &4789306
 CanvasRenderer:
@@ -341,6 +342,7 @@ MonoBehaviour:
   element: Grass
   power: 7
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &8076046
 CanvasRenderer:
@@ -544,8 +546,8 @@ RectTransform:
   m_GameObject: {fileID: 89939491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -591,7 +593,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -616,6 +618,7 @@ MonoBehaviour:
   element: Fire
   power: 11
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &89939495
 CanvasRenderer:
@@ -666,7 +669,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -706,8 +709,8 @@ RectTransform:
   m_GameObject: {fileID: 103117769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.56249994, y: 0.74999994, z: 0.37499997}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -778,6 +781,7 @@ MonoBehaviour:
   element: Fire
   power: 13
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &103117773
 CanvasRenderer:
@@ -894,6 +898,7 @@ MonoBehaviour:
   element: Grass
   power: 10
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &105968429
 CanvasRenderer:
@@ -1056,6 +1061,7 @@ MonoBehaviour:
   element: Water
   power: 6
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &108314652
 CanvasRenderer:
@@ -1107,7 +1113,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1242,6 +1248,7 @@ MonoBehaviour:
   element: Grass
   power: 10
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &129680491
 CanvasRenderer:
@@ -1507,6 +1514,7 @@ MonoBehaviour:
   element: Water
   power: 9
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &185805226
 CanvasRenderer:
@@ -1558,7 +1566,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1597,8 +1605,8 @@ RectTransform:
   m_GameObject: {fileID: 187456910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -1644,7 +1652,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1669,6 +1677,7 @@ MonoBehaviour:
   element: Fire
   power: 3
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &187456914
 CanvasRenderer:
@@ -1719,7 +1728,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1786,6 +1795,7 @@ MonoBehaviour:
   element: Grass
   power: 11
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &223360080
 CanvasRenderer:
@@ -1993,6 +2003,7 @@ MonoBehaviour:
   element: Water
   power: 3
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &250324286
 CanvasRenderer:
@@ -2044,7 +2055,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2110,6 +2121,7 @@ MonoBehaviour:
   element: Water
   power: 10
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &266118364
 CanvasRenderer:
@@ -2216,6 +2228,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &288007027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288007029}
+  - component: {fileID: 288007028}
+  m_Layer: 0
+  m_Name: SoundFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &288007028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288007027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5b5ce5434d7ab4aa16e46d705e1a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundFXObject: {fileID: 9137648786215609079, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+--- !u!4 &288007029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288007027}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289665484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2329,7 @@ MonoBehaviour:
   element: Water
   power: 2
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &289665487
 CanvasRenderer:
@@ -2479,6 +2537,7 @@ MonoBehaviour:
   element: Water
   power: 5
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &339249005
 CanvasRenderer:
@@ -2530,7 +2589,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2596,6 +2655,7 @@ MonoBehaviour:
   element: Grass
   power: 4
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &344216937
 CanvasRenderer:
@@ -2892,6 +2952,7 @@ MonoBehaviour:
   element: Water
   power: 10
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &362502148
 CanvasRenderer:
@@ -2943,7 +3004,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3054,6 +3115,7 @@ MonoBehaviour:
   element: Grass
   power: 12
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &381289686
 CanvasRenderer:
@@ -3171,6 +3233,7 @@ MonoBehaviour:
   element: Water
   power: 7
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &382765817
 CanvasRenderer:
@@ -3367,8 +3430,8 @@ RectTransform:
   m_GameObject: {fileID: 467802095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -3414,7 +3477,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3439,6 +3502,7 @@ MonoBehaviour:
   element: Fire
   power: 10
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &467802099
 CanvasRenderer:
@@ -3489,7 +3553,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3529,8 +3593,8 @@ RectTransform:
   m_GameObject: {fileID: 576435182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -3576,7 +3640,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3601,6 +3665,7 @@ MonoBehaviour:
   element: Fire
   power: 7
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &576435186
 CanvasRenderer:
@@ -3651,7 +3716,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3802,6 +3867,7 @@ MonoBehaviour:
   element: Grass
   power: 12
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &647760563
 CanvasRenderer:
@@ -3937,8 +4003,8 @@ RectTransform:
   m_GameObject: {fileID: 697140517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -3984,7 +4050,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4009,6 +4075,7 @@ MonoBehaviour:
   element: Fire
   power: 6
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &697140521
 CanvasRenderer:
@@ -4059,7 +4126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4126,6 +4193,7 @@ MonoBehaviour:
   element: Fire
   power: 4
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &718392818
 CanvasRenderer:
@@ -4333,6 +4401,7 @@ MonoBehaviour:
   element: Grass
   power: 7
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &761704546
 CanvasRenderer:
@@ -4495,6 +4564,7 @@ MonoBehaviour:
   element: Water
   power: 2
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &775934211
 CanvasRenderer:
@@ -4546,7 +4616,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4612,6 +4682,7 @@ MonoBehaviour:
   element: Grass
   power: 13
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &779694983
 CanvasRenderer:
@@ -4819,6 +4890,7 @@ MonoBehaviour:
   element: Grass
   power: 9
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &799086220
 CanvasRenderer:
@@ -5020,6 +5092,7 @@ MonoBehaviour:
   element: Fire
   power: 6
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &859038206
 CanvasRenderer:
@@ -5155,8 +5228,8 @@ RectTransform:
   m_GameObject: {fileID: 866637904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -5202,7 +5275,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5227,6 +5300,7 @@ MonoBehaviour:
   element: Fire
   power: 14
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &866637908
 CanvasRenderer:
@@ -5277,7 +5351,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5344,6 +5418,7 @@ MonoBehaviour:
   element: Grass
   power: 2
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &872640750
 CanvasRenderer:
@@ -5479,8 +5554,8 @@ RectTransform:
   m_GameObject: {fileID: 921994337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -5526,7 +5601,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5551,6 +5626,7 @@ MonoBehaviour:
   element: Fire
   power: 9
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &921994341
 CanvasRenderer:
@@ -5601,7 +5677,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5668,6 +5744,7 @@ MonoBehaviour:
   element: Water
   power: 11
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &982135257
 CanvasRenderer:
@@ -5978,6 +6055,7 @@ MonoBehaviour:
   element: Water
   power: 12
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &987598628
 CanvasRenderer:
@@ -6029,7 +6107,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6068,8 +6146,8 @@ RectTransform:
   m_GameObject: {fileID: 1003015161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -6115,7 +6193,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6140,6 +6218,7 @@ MonoBehaviour:
   element: Fire
   power: 5
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1003015165
 CanvasRenderer:
@@ -6190,7 +6269,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6372,6 +6451,7 @@ MonoBehaviour:
   element: Water
   power: 4
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1100428498
 CanvasRenderer:
@@ -6423,7 +6503,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6489,6 +6569,7 @@ MonoBehaviour:
   element: Water
   power: 14
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1143674768
 CanvasRenderer:
@@ -6624,8 +6705,8 @@ RectTransform:
   m_GameObject: {fileID: 1167151161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -6671,7 +6752,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6696,6 +6777,7 @@ MonoBehaviour:
   element: Fire
   power: 8
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1167151165
 CanvasRenderer:
@@ -6746,7 +6828,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6858,6 +6940,7 @@ MonoBehaviour:
   element: Grass
   power: 14
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1192651519
 CanvasRenderer:
@@ -7020,6 +7103,7 @@ MonoBehaviour:
   element: Water
   power: 7
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1231080048
 CanvasRenderer:
@@ -7071,7 +7155,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7168,6 +7252,7 @@ MonoBehaviour:
   element: Grass
   power: 3
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1308530593
 CanvasRenderer:
@@ -7375,6 +7460,7 @@ MonoBehaviour:
   element: Grass
   power: 13
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1312604650
 CanvasRenderer:
@@ -7465,8 +7551,8 @@ RectTransform:
   m_GameObject: {fileID: 1313690979}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -7512,7 +7598,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7537,6 +7623,7 @@ MonoBehaviour:
   element: Fire
   power: 2
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1313690983
 CanvasRenderer:
@@ -7587,7 +7674,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7832,6 +7919,7 @@ MonoBehaviour:
   element: Water
   power: 13
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1362752996
 CanvasRenderer:
@@ -7883,7 +7971,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7928,7 +8016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 272.7, y: -138.5}
+  m_AnchoredPosition: {x: 254.4, y: -131.1}
   m_SizeDelta: {x: 45.32, y: 41.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378434490
@@ -8014,7 +8102,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.9853325, w: 22.452963}
+  m_margin: {x: 2.3948271, y: -0.000009466047, z: 0.9853325, w: 27.703993}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8144,6 +8232,7 @@ MonoBehaviour:
   element: Fire
   power: 14
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!61 &1400959930
 BoxCollider2D:
@@ -8246,6 +8335,7 @@ MonoBehaviour:
   element: Fire
   power: 2
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1417614802
 CanvasRenderer:
@@ -8463,6 +8553,7 @@ MonoBehaviour:
   - {fileID: 1713655735}
   - {fileID: 381289685}
   - {fileID: 1312604649}
+  eDiscardPile: []
   enemyPlay: {fileID: 0}
   cardSlots:
   - {fileID: 1679376982}
@@ -8553,8 +8644,8 @@ RectTransform:
   m_GameObject: {fileID: 1437914178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -8600,7 +8691,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8625,6 +8716,7 @@ MonoBehaviour:
   element: Fire
   power: 12
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1437914182
 CanvasRenderer:
@@ -8675,7 +8767,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8742,6 +8834,7 @@ MonoBehaviour:
   element: Water
   power: 9
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1524338468
 CanvasRenderer:
@@ -8949,6 +9042,7 @@ MonoBehaviour:
   element: Grass
   power: 5
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1528620121
 CanvasRenderer:
@@ -9066,6 +9160,7 @@ MonoBehaviour:
   element: Water
   power: 13
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1553021037
 CanvasRenderer:
@@ -9273,6 +9368,7 @@ MonoBehaviour:
   element: Water
   power: 8
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1566643055
 CanvasRenderer:
@@ -9324,7 +9420,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9527,6 +9623,7 @@ MonoBehaviour:
   element: Water
   power: 11
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1630447472
 CanvasRenderer:
@@ -9578,7 +9675,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9644,6 +9741,7 @@ MonoBehaviour:
   element: Grass
   power: 9
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1641153914
 CanvasRenderer:
@@ -9806,6 +9904,7 @@ MonoBehaviour:
   element: Fire
   power: 10
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1678043142
 CanvasRenderer:
@@ -10136,6 +10235,7 @@ MonoBehaviour:
   element: Grass
   power: 14
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1709834545
 CanvasRenderer:
@@ -10343,6 +10443,7 @@ MonoBehaviour:
   element: Grass
   power: 11
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1713655736
 CanvasRenderer:
@@ -10505,6 +10606,7 @@ MonoBehaviour:
   element: Grass
   power: 8
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1778060094
 CanvasRenderer:
@@ -10667,6 +10769,7 @@ MonoBehaviour:
   element: Grass
   power: 4
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1779406555
 CanvasRenderer:
@@ -10868,6 +10971,7 @@ MonoBehaviour:
   element: Water
   power: 3
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1842060918
 CanvasRenderer:
@@ -11030,6 +11134,7 @@ MonoBehaviour:
   element: Fire
   power: 8
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1883515628
 CanvasRenderer:
@@ -11276,6 +11381,7 @@ MonoBehaviour:
   element: Fire
   power: 7
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1890868001
 CanvasRenderer:
@@ -11483,6 +11589,7 @@ MonoBehaviour:
   element: Grass
   power: 3
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1920151436
 CanvasRenderer:
@@ -11600,6 +11707,7 @@ MonoBehaviour:
   element: Water
   power: 12
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1941606206
 CanvasRenderer:
@@ -11735,8 +11843,8 @@ RectTransform:
   m_GameObject: {fileID: 1947681825}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74999994, y: 0.74999994, z: 0.74999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 113043569}
   m_RootOrder: -1
@@ -11782,7 +11890,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -11807,6 +11915,7 @@ MonoBehaviour:
   element: Fire
   power: 4
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &1947681829
 CanvasRenderer:
@@ -11857,7 +11966,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6e693dc51179b844bdfdcbdcca32ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11924,6 +12033,7 @@ MonoBehaviour:
   element: Fire
   power: 13
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1965171072
 CanvasRenderer:
@@ -12174,6 +12284,7 @@ MonoBehaviour:
   element: Grass
   power: 6
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &1985084083
 CanvasRenderer:
@@ -12336,6 +12447,7 @@ MonoBehaviour:
   element: Grass
   power: 8
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2014453180
 CanvasRenderer:
@@ -12498,6 +12610,7 @@ MonoBehaviour:
   element: Fire
   power: 3
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2020548355
 CanvasRenderer:
@@ -12660,6 +12773,7 @@ MonoBehaviour:
   element: Fire
   power: 11
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2022645731
 CanvasRenderer:
@@ -12822,6 +12936,7 @@ MonoBehaviour:
   element: Water
   power: 5
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2061778113
 CanvasRenderer:
@@ -12984,6 +13099,7 @@ MonoBehaviour:
   element: Fire
   power: 5
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2064888585
 CanvasRenderer:
@@ -13191,6 +13307,7 @@ MonoBehaviour:
   element: Grass
   power: 2
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &2073298836
 CanvasRenderer:
@@ -13308,6 +13425,7 @@ MonoBehaviour:
   element: Fire
   power: 12
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2078372743
 CanvasRenderer:
@@ -13470,6 +13588,7 @@ MonoBehaviour:
   element: Water
   power: 6
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2084574867
 CanvasRenderer:
@@ -13632,6 +13751,7 @@ MonoBehaviour:
   element: Grass
   power: 5
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2090033307
 CanvasRenderer:
@@ -13839,6 +13959,7 @@ MonoBehaviour:
   element: Grass
   power: 6
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &2091825186
 CanvasRenderer:
@@ -13956,6 +14077,7 @@ MonoBehaviour:
   element: Water
   power: 8
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2109669401
 CanvasRenderer:
@@ -14163,6 +14285,7 @@ MonoBehaviour:
   element: Water
   power: 14
   hasBeenPlayed: 0
+  player: 0
   handIndex: 0
 --- !u!222 &2129398178
 CanvasRenderer:
@@ -14214,7 +14337,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9578202, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14280,6 +14403,7 @@ MonoBehaviour:
   element: Water
   power: 4
   hasBeenPlayed: 0
+  player: 1
   handIndex: 0
 --- !u!222 &2145270855
 CanvasRenderer:
@@ -14485,3 +14609,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145970960}
   m_CullTransparentMesh: 1
+--- !u!1001 &6045826258619887564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1103350239641034971, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_Name
+      value: SoundFXObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7931103579938511393, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
