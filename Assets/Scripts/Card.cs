@@ -28,7 +28,6 @@ public class Card: MonoBehaviour
     private void OnMouseDown()
     {
         
-
         if(hasBeenPlayed == false && cm.state == BattleState.PLAYERTURN )
         {
             transform.position = cm.playerCardLoc.position;

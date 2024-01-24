@@ -41,6 +41,7 @@ public class CombatManager : MonoBehaviour
     {
         state = BattleState.START;
         StartCoroutine(SetUpBattle());
+       
     }
     
     private IEnumerator SetUpBattle()
@@ -54,6 +55,14 @@ public class CombatManager : MonoBehaviour
         enemyGo.transform.position = enemyBattleStation.transform.position;
         enemyUnit = enemyGo.GetComponent<Unit>();
 
+
+        for(int i = 0; i<4; i++)
+        {
+            DrawCard();
+        }
+
+     
+
         yield return new WaitForSeconds(0.5f);
 
         state = BattleState.ENEMYTURN;
@@ -63,7 +72,9 @@ public class CombatManager : MonoBehaviour
     }
     IEnumerator EnemyTurn()
     {
-        enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
+        Card enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
+        enemyDeck.Remove(enemyPlay);
+
         yield return new WaitForSeconds(0.5f);
 
         state = BattleState.PLAYERTURN;
@@ -80,7 +91,7 @@ public class CombatManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Player turn end");
+     
 
         Resolve();
         
@@ -133,7 +144,6 @@ public class CombatManager : MonoBehaviour
             Debug.Log("Player Lost with" + enemyPlay.element);
         }
 
-        //issue starts here
 
         if (playerwin && !ewin) 
         {
@@ -220,23 +230,13 @@ public class CombatManager : MonoBehaviour
        
     }
  
-   
 
     private void Update()
     {
         deckSizeText.text = deck.Count.ToString();
-        DrawCard();
+       
+       
     }
 
 }
 
-
-/*
- * 
- * states:
- * start
- * player turn
- * enemy turn
- * won/lost
- *
- * */
