@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Slider Puzzle.unity
+    guid: 57e3733341b11954c9d81590de39d613
+  - enabled: 1
     path: Assets/Scenes/Combat1.unity
     guid: b04f09a9ef978014bba80346e9c8d36a
   m_configObjects: {}

@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST}
+public enum BattleState { START, PLAYERTURN, ENEMYTURN,RESOLVE, WON, LOST}
 public class CombatManager : MonoBehaviour
 {
     public List<Card> deck = new List<Card>();
     public List<Card> discardPile = new List<Card>();
+    public Card playedCard = null;
+
+    public List <Card> enemyDeck = new List<Card>();
+    public Card enemyPlay = null;   
+
+
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
 
@@ -20,6 +28,8 @@ public class CombatManager : MonoBehaviour
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
+    public Transform playerCardLoc;
+    public Transform enemyCardLoc;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -27,41 +37,128 @@ public class CombatManager : MonoBehaviour
 
     public TextMeshProUGUI deckSizeText;
 
-    private void Start()
+    private void Awake()
     {
         state = BattleState.START;
         StartCoroutine(SetUpBattle());
     }
-
+    
     private IEnumerator SetUpBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab,playerBattleStation);
+        GameObject playerGO = Instantiate(playerPrefab);
+        playerGO.transform.position = playerBattleStation.transform.position;   
         playerGO.GetComponent<Unit>();
 
 
-        GameObject enemyGo = Instantiate(enemyPrefab,enemyBattleStation);
+        GameObject enemyGo = Instantiate(enemyPrefab);
+        enemyGo.transform.position = enemyBattleStation.transform.position;
         enemyUnit = enemyGo.GetComponent<Unit>();
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.PLAYERTURN;
-        PlayerTurn();
-
+        state = BattleState.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    
 
     }
-
-   
-    //logic during the players turn
-    public void PlayerTurn()
+    IEnumerator EnemyTurn()
     {
-
-
-        return;
+        enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
+        state = BattleState.PLAYERTURN;
+        yield return new WaitForSeconds(0.5f);
 
     }
 
+    public void Resolve()
+    {
+        if (state != BattleState.RESOLVE)
+            return;
+
+        StartCoroutine(ResolveRound());
+
+    }
+
+    IEnumerator ResolveRound()
+    {
+        bool playerwin = false;
+        bool pDead = false;
+        bool eDead = false;
+
+        if(playedCard.element == "Fire" && enemyPlay.element == "Grass")
+        {
+            playerwin = true;
+            Debug.Log("Player Win with Fire");
+        }
+        else if (playedCard.element == "Water" && enemyPlay.element == "Fire")
+        {
+            playerwin = true;
+            Debug.Log("Player Win with Water");
+        }
+        else if (playedCard.element == "Grass" && enemyPlay.element == "Water")
+        {
+            playerwin = true;
+            Debug.Log("Player Win with Grass");
+        }
+        else
+        {
+            playerwin= false;
+            Debug.Log("Player Lost with" + enemyPlay.element);
+        }
+
+        
+
+        if (playerwin) 
+        {
+            eDead = enemyUnit.TakeDamage(Mathf.Abs(playedCard.power - enemyPlay.power));
+            Debug.Log(enemyUnit.currentHP);
+
+        }
+        else
+        {
+            pDead = playerUnit.TakeDamage(Mathf.Abs(enemyPlay.power - playedCard.power));
+            Debug.Log(playerUnit.currentHP);
+        }
 
 
+
+        yield return new WaitForSeconds(2f);
+
+        if(eDead)
+        {
+            state = BattleState.WON;
+            Debug.Log("player wins");
+            EndBattle();
+        }
+        else if(pDead)
+        {
+            Debug.Log("player lost");
+           
+            state = BattleState.LOST;
+        }
+        else
+        {
+            Debug.Log("loop");
+         
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+
+
+    }
+
+    void EndBattle()
+    {
+        if (state == BattleState.WON)
+        {
+            //win
+        }
+        else if(state == BattleState.LOST)
+        {
+            //lose- load game over screen
+        }
+
+    }
+    
     public void DrawCard()
     {
         if (deck.Count >= 1)
@@ -85,11 +182,7 @@ public class CombatManager : MonoBehaviour
         }
        
     }
-
-    public void EnemyTurn()
-    {
-
-    }
+ 
    
 
     private void Update()

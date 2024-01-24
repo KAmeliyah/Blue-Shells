@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     FadeInOut fade;
 
@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
         fade = FindObjectOfType<FadeInOut>();
     }
 
+
     public IEnumerator ChangeScene()
     {
         fade.FadeIn();
@@ -24,17 +25,17 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Door>())
+        if (collision.GetComponent<SceneChanger>())
         {
             enterAllowed = true;
-            sceneToLoad = "Combat1";
+            sceneToLoad = "Slider Puzzle";
         }
        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Door>()) 
+        if (collision.GetComponent<SceneChanger>()) 
         { 
             enterAllowed = false;
         
