@@ -12,6 +12,7 @@ public class GameScript : MonoBehaviour
     {
         _camera = Camera.main;
         Shuffle();
+        endPanel.SetActive(false);
     }
 
     void Update()
