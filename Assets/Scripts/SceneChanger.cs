@@ -25,10 +25,17 @@ public class SceneChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<SceneChanger>())
+        Scene scene = SceneManager.GetActiveScene();
+        
+        if (collision.GetComponent<SceneChanger>() && scene.name == "Overworld1")
         {
             enterAllowed = true;
             sceneToLoad = "Slider Puzzle";
+        }
+        else
+        {
+            enterAllowed = true;
+            sceneToLoad = "End Credits";
         }
        
     }

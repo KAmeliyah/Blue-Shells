@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    public Animator animator;
+
     private Rigidbody2D rb;
     private BoxCollider2D coll;
 
@@ -30,7 +32,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float dirX = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(dirX));
+
+        rb.velocity = new Vector2(dirX * 3.5f, rb.velocity.y);
 
         if( Input.GetButtonDown("Jump") && IsGrounded())
         {

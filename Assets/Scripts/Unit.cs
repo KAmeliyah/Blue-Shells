@@ -44,7 +44,7 @@ public class Unit : MonoBehaviour
             SoundFXManager.instance.PlaySoundFXClip(waterSoundClip, transform, 1f);
         }
       
-        SoundFXManager.instance.PlaySoundFXClip(swordSoundClip, transform, 1f);
+       
 
 
 
