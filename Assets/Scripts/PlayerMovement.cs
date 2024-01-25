@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public float dirX;
+    public bool isFacingLeft;
+
     private Rigidbody2D rb;
     private BoxCollider2D coll;
 
@@ -23,27 +26,42 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
 
-        
-
+       
     }
 
     // Update is called once per frame
     private void Update()
     {
-        float dirX = Input.GetAxisRaw("Horizontal");
+        dirX = Input.GetAxisRaw("Horizontal");
 
         animator.SetFloat("Speed", Mathf.Abs(dirX));
 
-        rb.velocity = new Vector2(dirX * 3.5f, rb.velocity.y);
+       
 
         if( Input.GetButtonDown("Jump") && IsGrounded())
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(rb.velocity.x, 7);
         }
 
-        if (Input.GetButtonDown("Horizontal"))
+    }
+
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX * 3.5f, rb.velocity.y);
+
+        if (dirX < 0 && !isFacingLeft) 
         {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            isFacingLeft = true;
         }
+        if (dirX > 0 && isFacingLeft) 
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            isFacingLeft= false;
+        }
+
+
 
     }
 
