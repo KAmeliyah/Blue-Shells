@@ -183,7 +183,6 @@ public class CombatManager : MonoBehaviour
         else if(pDead)
         {
           
-           
             state = BattleState.LOST;
             EndBattle();
         }
@@ -205,7 +204,7 @@ public class CombatManager : MonoBehaviour
         if (state == BattleState.WON)
         {
             
-            SceneManager.LoadSceneAsync("Overworld1");
+            SceneManager.LoadSceneAsync("Overworld2");
         }
         else if(state == BattleState.LOST)
         {
