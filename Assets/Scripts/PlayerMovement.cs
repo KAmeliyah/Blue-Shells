@@ -61,8 +61,6 @@ public class PlayerMovement : MonoBehaviour
             isFacingLeft= false;
         }
 
-
-
     }
 
     private bool IsGrounded()
