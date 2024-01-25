@@ -30,7 +30,7 @@ public class SceneChanger : MonoBehaviour
         if (collision.GetComponent<SceneChanger>() && scene.name == "Overworld1")
         {
             enterAllowed = true;
-            sceneToLoad = "Slider Puzzle";
+            sceneToLoad = "Overworld1";
         }
         else
         {
