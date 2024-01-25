@@ -8,6 +8,8 @@ public class Unit : MonoBehaviour
 
     [SerializeField] private AudioClip deathSoundClip;
     [SerializeField] private AudioClip swordSoundClip;
+    [SerializeField] private AudioClip fireSoundClip;
+    [SerializeField] private AudioClip waterSoundClip;
 
 
     public string maxHP;
@@ -30,11 +32,23 @@ public class Unit : MonoBehaviour
 
         SoundFXManager.instance.PlaySoundFXClip(swordSoundClip, transform, 1f);
         currentHP -= _dmg;
-        Debug.Log("Damage Taken");
 
+
+        if(element == "Fire")
+        {
+            SoundFXManager.instance.PlaySoundFXClip(fireSoundClip, transform, 1f);
+            
+        }
+        else if (element == "Water")
+        {
+            SoundFXManager.instance.PlaySoundFXClip(waterSoundClip, transform, 1f);
+        }
       
+        SoundFXManager.instance.PlaySoundFXClip(swordSoundClip, transform, 1f);
 
-        if(currentHP <= 0)
+
+
+        if (currentHP <= 0)
         {
             SoundFXManager.instance.PlaySoundFXClip(deathSoundClip, transform, 1f);
        

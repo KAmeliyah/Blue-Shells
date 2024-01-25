@@ -28,6 +28,8 @@ public class SoundFXManager : MonoBehaviour
 
         audioSource.volume = volume;
 
+        //may add delay depending on length of animation
+
         audioSource.Play();
 
         float clipLength = audioSource.clip.length;

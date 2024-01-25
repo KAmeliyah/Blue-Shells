@@ -101,8 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d99b1655686324880987fd04cc5ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSoundClip: {fileID: 8300000, guid: 1b2a336fb36a49547a873498025f76f1, type: 3}
+  deathSoundClip: {fileID: 8300000, guid: e1cacdcac4ecdc547a9e86599529e406, type: 3}
   swordSoundClip: {fileID: 8300000, guid: fc5f9a0b6cfd0f74d986af581d856691, type: 3}
+  fireSoundClip: {fileID: 8300000, guid: 77a83bc9014bde34385d87039fa7b461, type: 3}
+  waterSoundClip: {fileID: 8300000, guid: 4013f94c0f8c3744ba492b512dffe9ee, type: 3}
   maxHP: 60
   currentHP: 60
   damage: 0

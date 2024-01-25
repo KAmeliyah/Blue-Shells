@@ -22,7 +22,7 @@ public class CombatManager : MonoBehaviour
     public Card enemyPlay = null;
 
 
-
+    [SerializeField] private AudioClip GoToCritSoundClip;
 
 
     public Transform[] cardSlots;
@@ -170,9 +170,6 @@ public class CombatManager : MonoBehaviour
             pDead = playerUnit.TakeDamage(damage,enemyPlay.element);
          
         }
-       
-
-      
 
         yield return new WaitForSeconds(5f);
 
@@ -203,15 +200,17 @@ public class CombatManager : MonoBehaviour
 
 
 
-
     void EndBattle()
     {
         if (state == BattleState.WON)
         {
+            
             SceneManager.LoadSceneAsync("Overworld1");
         }
         else if(state == BattleState.LOST)
         {
+
+            SoundFXManager.instance.PlaySoundFXClip(GoToCritSoundClip, transform, 1f);
             SceneManager.LoadSceneAsync("GameOver");
         }
 

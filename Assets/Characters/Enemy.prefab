@@ -176,6 +176,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
+  runningSoundClip: {fileID: 0}
 --- !u!114 &6660245954382145810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSoundClip: {fileID: 8300000, guid: 1b2a336fb36a49547a873498025f76f1, type: 3}
   swordSoundClip: {fileID: 8300000, guid: fc5f9a0b6cfd0f74d986af581d856691, type: 3}
+  fireSoundClip: {fileID: 8300000, guid: 77a83bc9014bde34385d87039fa7b461, type: 3}
+  waterSoundClip: {fileID: 8300000, guid: 4013f94c0f8c3744ba492b512dffe9ee, type: 3}
   maxHP: 20
   currentHP: 20
   damage: 0

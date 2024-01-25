@@ -8601,6 +8601,7 @@ MonoBehaviour:
   - {fileID: 1312604649}
   eDiscardPile: []
   enemyPlay: {fileID: 0}
+  GoToCritSoundClip: {fileID: 8300000, guid: be56a693380816d44846fb56deae5a47, type: 3}
   cardSlots:
   - {fileID: 1679376982}
   - {fileID: 810556089}
@@ -14711,6 +14712,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137648786215609079, guid: e45cfb35582acd148b1b794df1df416b, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3247817382405099251, guid: 6b52a7466384b4041ae02965f450e30c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
