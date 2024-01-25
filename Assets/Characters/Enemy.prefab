@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1799610975137622782}
   - component: {fileID: 6660245954382145810}
   - component: {fileID: 1117942052542385180}
+  - component: {fileID: 1628737589373541843}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -211,4 +212,24 @@ MonoBehaviour:
   maxHP: 20
   currentHP: 20
   damage: 0
-  attackPower: 0
+--- !u!95 &1628737589373541843
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652869406700424204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bff2a6a7063a0c46a5cd71fc5026937, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

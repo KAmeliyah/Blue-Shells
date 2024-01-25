@@ -25,6 +25,13 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private AudioClip GoToCritSoundClip;
 
 
+    public Animator playerAnimator;
+    public Animator enemyAnimator;
+
+    public bool playerwin;
+    public bool ewin;
+    public string element;
+
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
 
@@ -41,10 +48,10 @@ public class CombatManager : MonoBehaviour
     Unit enemyUnit;
 
 
-    public TextMeshProUGUI deckSizeText;
-
     private void Awake()
     {
+      
+
         state = BattleState.START;
         StartCoroutine(SetUpBattle());
        
@@ -78,6 +85,7 @@ public class CombatManager : MonoBehaviour
     }
     IEnumerator EnemyTurn()
     {
+
         enemyPlay = enemyDeck[Random.Range(0, deck.Count)];
         enemyDeck.Remove(enemyPlay);
 
@@ -90,7 +98,7 @@ public class CombatManager : MonoBehaviour
     IEnumerator WaitWhilePlayerTurn()
     {
         playedCard = null;
-        Debug.Log("Player turn start");
+      
 
        while(playedCard == null)
         {
@@ -99,7 +107,7 @@ public class CombatManager : MonoBehaviour
 
         DrawCard();
 
-        Debug.Log("Player Turn Ended");
+       
 
         Resolve();
         
@@ -116,39 +124,43 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator ResolveRound()
     {
-        bool playerwin = false;
-        bool ewin = false;
+        playerwin = false;
+        ewin = false;
         bool pDead = false;
         bool eDead = false;
 
         //resolve winner
 
-        if(playedCard.element == "Fire" && enemyPlay.element == "Grass")
+        element = playedCard.element;
+
+        if(element == "Fire" && enemyPlay.element == "Grass")
         {
             playerwin = true;
             ewin = false;
             
+                        
         }
-        else if (playedCard.element == "Water" && enemyPlay.element == "Fire")
+        else if (element == "Water" && enemyPlay.element == "Fire")
         {
             playerwin = true;
             ewin = false;
-            
+                    
+
         }
-        else if (playedCard.element == "Grass" && enemyPlay.element == "Water")
+        else if (element == "Grass" && enemyPlay.element == "Water")
         {
             playerwin = true;
             ewin = false;
-         
-           
+
         }
-        else if (playedCard.element == enemyPlay.element)
+        else if (element == enemyPlay.element)
         {
             playerwin = false;
             ewin = false;
         }
         else
         {
+            
             ewin = true;
             playerwin= false;
            
@@ -168,11 +180,14 @@ public class CombatManager : MonoBehaviour
             
             int damage = Mathf.Abs(enemyPlay.power - playedCard.power);
             pDead = playerUnit.TakeDamage(damage,enemyPlay.element);
+           
          
         }
 
         yield return new WaitForSeconds(5f);
 
+
+     
 
         //check win
         if(eDead)
@@ -184,11 +199,11 @@ public class CombatManager : MonoBehaviour
         {
           
             state = BattleState.LOST;
+            playerAnimator.SetBool("isDead", true);
             EndBattle();
         }
         else
         {
-           
             
             state = BattleState.ENEMYTURN;
             enemyPlay.MovetoDiscardPile();
@@ -197,7 +212,7 @@ public class CombatManager : MonoBehaviour
 
     }
 
-
+    
 
     void EndBattle()
     {
@@ -240,11 +255,7 @@ public class CombatManager : MonoBehaviour
     }
  
 
-    private void Update()
-    {
-        deckSizeText.text = deck.Count.ToString();
-       
-    }
+    
 
 }
 

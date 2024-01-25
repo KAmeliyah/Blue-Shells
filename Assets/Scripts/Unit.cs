@@ -12,11 +12,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private AudioClip waterSoundClip;
 
 
+
+
     public string maxHP;
     public int currentHP;
 
     public int damage;
-    public int attackPower;
 
 
 
