@@ -22,6 +22,9 @@ public class CombatManager : MonoBehaviour
     public Card enemyPlay = null;
 
 
+
+
+
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
 

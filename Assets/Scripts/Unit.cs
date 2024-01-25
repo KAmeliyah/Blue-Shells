@@ -27,13 +27,12 @@ public class Unit : MonoBehaviour
 
     public bool TakeDamage(int _dmg, string element)
     {
+
+        SoundFXManager.instance.PlaySoundFXClip(swordSoundClip, transform, 1f);
         currentHP -= _dmg;
+        Debug.Log("Damage Taken");
 
-       
-            SoundFXManager.instance.PlaySoundFXClip(swordSoundClip, transform, 1f);
-        
-
-        
+      
 
         if(currentHP <= 0)
         {
