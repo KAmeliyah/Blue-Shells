@@ -74,22 +74,25 @@ public class GameScript : MonoBehaviour
             tiles[15] = null;
             emptySpaceIndex = 15;
         }
-        int invertion;
-        do
+
+        // Perform a small number of random swaps
+        int numberOfSwaps = 30;
+
+        for (int i = 0; i < numberOfSwaps; i++)
         {
-            for (int i = 0; i <= 14; i++)
-            {
-                var lastPos = tiles[i].targetPosition;
-                int randomIndex = Random.Range(0,14);
-                tiles[i].targetPosition = tiles[randomIndex].targetPosition;
-                tiles[randomIndex].targetPosition = lastPos;
-                var tile = tiles[i];
-                tiles[i] = tiles[randomIndex];
-                tiles[randomIndex] = tile;
-            }
-            invertion = GetInversions();
-            Debug.Log("");
-        }while (invertion%2 != 0);
+            int randomIndex1 = Random.Range(0, 15);
+            int randomIndex2 = Random.Range(0, 15);
+
+            // Swap the target positions of two tiles
+            var tempPos = tiles[randomIndex1].targetPosition;
+            tiles[randomIndex1].targetPosition = tiles[randomIndex2].targetPosition;
+            tiles[randomIndex2].targetPosition = tempPos;
+
+            // Swap the tiles in the array
+            var tempTile = tiles[randomIndex1];
+            tiles[randomIndex1] = tiles[randomIndex2];
+            tiles[randomIndex2] = tempTile;
+        }
     }
     public int findIndex(TilesScript ts)
     {
