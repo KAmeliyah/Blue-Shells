@@ -18,6 +18,13 @@ public class PowerUp : MonoBehaviour
     private float amtPower = 0.0f;
     private float powerSpeed = 100.0f;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Hide the correct image at the beginning
+        HideCorrectImage();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -66,7 +73,7 @@ public class PowerUp : MonoBehaviour
         textPowerAmt.text = amtPower.ToString("F0");
 
         // Check if the fillAmount is in the specified range (0.3 to 0.4) after the button is released
-        if (imagePowerUp.fillAmount >= 0.3f && imagePowerUp.fillAmount <= 0.4f)
+        if (imagePowerUp.fillAmount >= 0.34f && imagePowerUp.fillAmount <= 0.40117f)
         {
             Debug.Log("Correct");
             ShowCorrectImage();  // Call a method to display the correct image
@@ -95,6 +102,7 @@ public class PowerUp : MonoBehaviour
         }
     }
 }
+
 
 
 
