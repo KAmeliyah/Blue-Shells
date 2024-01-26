@@ -219,7 +219,7 @@ public class CombatManager : MonoBehaviour
         if (state == BattleState.WON)
         {
             
-            SceneManager.LoadSceneAsync("Overworld2");
+            SceneManager.LoadSceneAsync("CriticalHit");
         }
         else if(state == BattleState.LOST)
         {
