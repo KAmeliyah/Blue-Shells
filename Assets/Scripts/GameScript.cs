@@ -33,7 +33,7 @@ public class GameScript : MonoBehaviour
                     tiles[emptySpaceIndex] = tiles[tileIndex];
                     tiles[tileIndex] = null;
                     emptySpaceIndex = tileIndex;
-                    
+
                 }
             }
         }
@@ -42,26 +42,26 @@ public class GameScript : MonoBehaviour
             int correctTiles = 0;
             foreach (var a in tiles)
             {
-                if (a != null) 
+                if (a != null)
                 {
-                if (a.inRightPlace)
-                    correctTiles++;
+                    if (a.inRightPlace)
+                        correctTiles++;
                 }
             }
             if (correctTiles == tiles.Length - 1)
             {
-      
+
                 _isFinished = true;
                 endPanel.SetActive(true);
             }
         }
     }
 
- // choose the scene to continue
-   public void Continue()
-   {
+    // choose the scene to continue
+    public void Continue()
+    {
         SceneManager.LoadSceneAsync("Combat1");
-   }
+    }
 
     public void Shuffle()
     {
@@ -74,31 +74,28 @@ public class GameScript : MonoBehaviour
             tiles[15] = null;
             emptySpaceIndex = 15;
         }
-
-        // Perform a small number of random swaps
-        int numberOfSwaps = 30;
-
-        for (int i = 0; i < numberOfSwaps; i++)
+        int invertion;
+        do
         {
-            int randomIndex1 = Random.Range(0, 15);
-            int randomIndex2 = Random.Range(0, 15);
-
-            // Swap the target positions of two tiles
-            var tempPos = tiles[randomIndex1].targetPosition;
-            tiles[randomIndex1].targetPosition = tiles[randomIndex2].targetPosition;
-            tiles[randomIndex2].targetPosition = tempPos;
-
-            // Swap the tiles in the array
-            var tempTile = tiles[randomIndex1];
-            tiles[randomIndex1] = tiles[randomIndex2];
-            tiles[randomIndex2] = tempTile;
-        }
+            for (int i = 0; i <= 14; i++)
+            {
+                var lastPos = tiles[i].targetPosition;
+                int randomIndex = Random.Range(0, 14);
+                tiles[i].targetPosition = tiles[randomIndex].targetPosition;
+                tiles[randomIndex].targetPosition = lastPos;
+                var tile = tiles[i];
+                tiles[i] = tiles[randomIndex];
+                tiles[randomIndex] = tile;
+            }
+            invertion = GetInversions();
+            Debug.Log("");
+        } while (invertion % 2 != 0);
     }
     public int findIndex(TilesScript ts)
     {
         for (int i = 0; i < tiles.Length; i++)
         {
-            if (tiles[i] !=null)
+            if (tiles[i] != null)
             {
                 if (tiles[i] == ts)
                 {
@@ -112,7 +109,7 @@ public class GameScript : MonoBehaviour
     int GetInversions()
     {
         int inversionsSum = 0;
-        for (int i = 0;i < tiles.Length;i++)
+        for (int i = 0; i < tiles.Length; i++)
         {
             int thisTileInvertion = 0;
             for (int j = i; j < tiles.Length; j++)
@@ -130,4 +127,6 @@ public class GameScript : MonoBehaviour
         return inversionsSum;
     }
 }
+
+
 
