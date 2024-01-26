@@ -71,7 +71,7 @@ public class PowerUp : MonoBehaviour
         {
             Debug.Log("Correct");
             ShowCorrectImage();
-            Invoke("ChangeSceneAfterDelay", 5f);
+            Invoke("ChangeSceneAfterDelay", 3f);
         }
         else
         {
