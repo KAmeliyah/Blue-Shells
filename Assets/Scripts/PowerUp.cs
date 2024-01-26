@@ -3,29 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField]
-    private Image imagePowerUp;
-    [SerializeField]
-    private TMP_Text textPowerAmt;
-    [SerializeField]
-    private GameObject correctImage;  // New serialized field for the correct image
+    [SerializeField] private Image powerUpImage;
+    [SerializeField] private TMP_Text textPowerAmt;
+    [SerializeField] private GameObject correctImage;
 
     private bool isPowerUp = false;
     private bool isDirectionUp = true;
     private float amtPower = 0.0f;
     private float powerSpeed = 100.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Hide the correct image at the beginning
         HideCorrectImage();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isPowerUp)
@@ -55,7 +50,7 @@ public class PowerUp : MonoBehaviour
             }
         }
 
-        imagePowerUp.fillAmount = (0.492f - 0.25f) * amtPower / 100.0f + 0.25f;
+        powerUpImage.fillAmount = (0.492f - 0.25f) * (amtPower / 100.0f) + 0.25f;
     }
 
     public void StartPowerUp()
@@ -64,7 +59,7 @@ public class PowerUp : MonoBehaviour
         amtPower = 0.0f;
         isDirectionUp = true;
         textPowerAmt.text = "";
-        HideCorrectImage();  // Call a method to hide the correct image when the power-up starts
+        HideCorrectImage();
     }
 
     public void EndPowerUp()
@@ -72,11 +67,11 @@ public class PowerUp : MonoBehaviour
         isPowerUp = false;
         textPowerAmt.text = amtPower.ToString("F0");
 
-        // Check if the fillAmount is in the specified range (0.3 to 0.4) after the button is released
-        if (imagePowerUp.fillAmount >= 0.34f && imagePowerUp.fillAmount <= 0.40117f)
+        if (powerUpImage.fillAmount >= 0.34f && powerUpImage.fillAmount <= 0.40117f)
         {
             Debug.Log("Correct");
-            ShowCorrectImage();  // Call a method to display the correct image
+            ShowCorrectImage();
+            Invoke("ChangeSceneAfterDelay", 5f);
         }
         else
         {
@@ -84,9 +79,13 @@ public class PowerUp : MonoBehaviour
         }
     }
 
+    void ChangeSceneAfterDelay()
+    {
+        SceneManager.LoadScene("Overworld2");
+    }
+
     void ShowCorrectImage()
     {
-        // Activate the correct image GameObject
         if (correctImage != null)
         {
             correctImage.SetActive(true);
@@ -95,7 +94,6 @@ public class PowerUp : MonoBehaviour
 
     void HideCorrectImage()
     {
-        // Deactivate the correct image GameObject
         if (correctImage != null)
         {
             correctImage.SetActive(false);
