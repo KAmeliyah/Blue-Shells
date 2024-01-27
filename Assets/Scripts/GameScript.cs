@@ -76,7 +76,7 @@ public class GameScript : MonoBehaviour
         }
 
         // Perform a small number of random swaps
-        int numberOfSwaps = 30;
+        int numberOfSwaps = 20;
 
         for (int i = 0; i < numberOfSwaps; i++)
         {
