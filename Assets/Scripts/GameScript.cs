@@ -33,7 +33,7 @@ public class GameScript : MonoBehaviour
                     tiles[emptySpaceIndex] = tiles[tileIndex];
                     tiles[tileIndex] = null;
                     emptySpaceIndex = tileIndex;
-                    
+
                 }
             }
         }
@@ -42,26 +42,52 @@ public class GameScript : MonoBehaviour
             int correctTiles = 0;
             foreach (var a in tiles)
             {
-                if (a != null) 
+                if (a != null)
                 {
-                if (a.inRightPlace)
-                    correctTiles++;
+                    if (a.inRightPlace)
+                        correctTiles++;
                 }
             }
             if (correctTiles == tiles.Length - 1)
             {
-      
+
                 _isFinished = true;
                 endPanel.SetActive(true);
             }
         }
     }
 
- // choose the scene to continue
-   public void Continue()
-   {
+    // choose the scene to continue
+    public void Continue()
+    {
         SceneManager.LoadSceneAsync("Combat1");
-   }
+    }
+
+    // Add the following function to solve the puzzle without animation
+    public void SolvePuzzle()
+    {
+        // Your existing code to reset the puzzle
+        Shuffle();
+
+        // Your existing code to set up the initial state
+        endPanel.SetActive(false);
+        _isFinished = false;
+
+        // Solve the puzzle directly without animation
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            if (tiles[i] != null)
+            {
+                tiles[i].targetPosition = tiles[i].transform.position; // Use the current position as the target
+            }
+        }
+
+        // Puzzle is considered solved
+        _isFinished = true;
+        endPanel.SetActive(true);
+    }
+
+
 
     public void Shuffle()
     {
@@ -98,7 +124,7 @@ public class GameScript : MonoBehaviour
     {
         for (int i = 0; i < tiles.Length; i++)
         {
-            if (tiles[i] !=null)
+            if (tiles[i] != null)
             {
                 if (tiles[i] == ts)
                 {
@@ -112,7 +138,7 @@ public class GameScript : MonoBehaviour
     int GetInversions()
     {
         int inversionsSum = 0;
-        for (int i = 0;i < tiles.Length;i++)
+        for (int i = 0; i < tiles.Length; i++)
         {
             int thisTileInvertion = 0;
             for (int j = i; j < tiles.Length; j++)
@@ -130,4 +156,5 @@ public class GameScript : MonoBehaviour
         return inversionsSum;
     }
 }
+
 
