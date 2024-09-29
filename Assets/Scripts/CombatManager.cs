@@ -232,14 +232,18 @@ public class CombatManager : MonoBehaviour
     
     public void DrawCard()
     {
+        // if there are cards left
         if (deck.Count >= 1)
         {
+            //pick a random card
             Card randCard = deck[Random.Range(0, deck.Count)];
 
             for (int i = 0; i < availableCardSlots.Length; i++)
             {
+                //find an available slot
                 if (availableCardSlots[i] == true)
                 {
+                    //set card to active and add to hand
                     randCard.gameObject.SetActive(true);
                     randCard.handIndex = i;
                     randCard.transform.position = cardSlots[i].position;
@@ -249,9 +253,7 @@ public class CombatManager : MonoBehaviour
                     return;
                 }
             }
-
         }
-       
     }
  
 
