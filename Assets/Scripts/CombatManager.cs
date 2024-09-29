@@ -243,11 +243,12 @@ public class CombatManager : MonoBehaviour
                 //find an available slot
                 if (availableCardSlots[i] == true)
                 {
-                    //set card to active and add to hand
+                    //set card to active and move to the right position
                     randCard.gameObject.SetActive(true);
                     randCard.handIndex = i;
                     randCard.transform.position = cardSlots[i].position;
 
+                    //add card to hand and remove from deck
                     availableCardSlots[i] = false;
                     deck.Remove(randCard);
                     return;
